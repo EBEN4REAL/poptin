@@ -4,8 +4,11 @@
         <i class="fa fa-times close-btn" @click="closePopin" aria-hidden="true"></i>
     </div>
     <div class="popin-wrapper" ref="popin-wrapper" >
-        <div class="popin-container" ref="popin-container" @click="hideContextMenu()"
-        @contextmenu.prevent="showContextMenu($event)" :style="{backgroundColor: popinBgStateData.backgroundColor}">
+        <div class="popin-container" ref="popin-container" 
+            @click="hideContextMenu()"
+            @contextmenu.prevent="showContextMenu($event)" 
+            :style="{backgroundColor: popinBgStateData.backgroundColor}">
+            
             <div class="popin-inner-container">
                 <div class="popin-stars-wrapper">
                     <div class="popin-stars">
