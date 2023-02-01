@@ -1,4 +1,3 @@
-
 :root {
     --white-color: #fff;
     --pane-padding: 5px 42px;
@@ -8,7 +7,7 @@
     --popin-bg-color: #1a1a1a;
     --black-color: #000;
     --loader-color: #ca3735;
-  }
+}
 
 
 * {
@@ -98,12 +97,18 @@ body {
 .popin-form-wrapper .popin-input {
     border: 3px solid var(--white-color);
     background: var(--white-color);
-    height: 45px;
     border-radius: 15px;
     width: 100%;
     font-size: 30px;
     padding: 5px 5px;
-    outline: none
+    outline: none;
+    position: absolute;
+    top: -4px;
+    left: 0px;
+}
+
+.position-relative {
+    position: relative;
 }
 
 .popin-form-wrapper .popin-input::-moz-placeholder {
@@ -125,7 +130,8 @@ body {
 }
 
 .poppin-btn-wrapper {
-    margin-top: 30px
+    margin-top: 30px;
+
 }
 
 .poptin-btn {
@@ -139,7 +145,17 @@ body {
     font-size: 22px;
     width: 100%;
     border-radius: 15px;
-    font-weight: 700
+    font-weight: 700;
+
+    position: absolute;
+    top: 45px;
+    left: 0px;
+}
+
+.footerText {
+    position: absolute;
+    top: 53px;
+    left: 21.5%;
 }
 
 .popin-stars-wrapper .popin-stars {
@@ -148,6 +164,24 @@ body {
     top: 40px;
     display: flex;
     justify-content: center
+}
+
+.popin-stars-wrapper .popin-stars .star1 {
+    position: absolute;
+    left: -3px;
+    top: 10px;
+}
+
+.popin-stars-wrapper .popin-stars .star2 {
+    position: absolute;
+    left: 51px;
+    top: -11px;
+}
+
+.popin-stars-wrapper .popin-stars .star3 {
+    position: absolute;
+    left: 120px;
+    top: 10px;
 }
 
 .popin-stars-wrapper {
@@ -204,9 +238,9 @@ body {
     bottom: 20px;
     right: 20px;
     z-index: 999;
-  }
-  
-  button {
+}
+
+button {
     padding: 10px 15px;
     background-color: rgb(121, 121, 183);
     color: white;
@@ -214,34 +248,33 @@ body {
     border-radius: 50%;
     cursor: pointer;
     border-radius: 15px;
-  }
-  
-  /* Line Loader styles */
-  .loader-container {
+}
+
+/* Line Loader styles */
+.loader-container {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     left: 48%;
     top: 10px;
-  }
-  
-  .loader {
+}
+
+.loader {
     border: 6px solid #f3f3f3;
     border-top: 6px solid var(--loader-color);
     border-radius: 50%;
     width: 50px;
     height: 50px;
     animation: spin 2s linear infinite;
-  }
-  
-  @keyframes spin {
+}
+
+@keyframes spin {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
-  
-  
+}
