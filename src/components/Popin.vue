@@ -46,7 +46,7 @@
           </div>
           <div class="popin-para-container">
             <div
-              class="popin-para text-white text-center"
+              class="popin-para text-white text-center draggableElement"
               v-on:dblclick="handleTextChange"
               contenteditable="true"
             >
@@ -54,6 +54,7 @@
                 {{ popinData?.attributes?.headerText }}
               </span>
               <span v-else ref="headerText">
+                <span class="grippy"></span>
                 All the text and elements in this popup should be editable and
                 dragable
               </span>
@@ -62,7 +63,7 @@
           <form class="popin-form-wrapper">
             <div class="poppin-input-wrapper position-relative">
               <input
-                class="popin-input"
+                class="popin-input draggableElement"
                 type="text"
                 v-drag
                 placeholder="E-mail"
@@ -72,7 +73,7 @@
             </div>
             <div class="poppin-btn-wrapper position-relative">
               <button
-                class="poptin-btn"
+                class="poptin-btn "
                 v-drag
                 @click="(e) => e.preventDefault()"
                 id="popinBtn"

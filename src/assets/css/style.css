@@ -278,3 +278,31 @@ button {
         transform: rotate(360deg);
     }
 }
+
+/* Draggable */
+.draggableElement {
+    border:dashed 1px #aaaaaa;
+    padding: 6px 12px;
+    font-size: 1.2em;
+  }
+  span.grippy {
+    content: '....';
+    width: 10px;
+    height: 100px;
+    display: inline-block;
+    overflow: hidden;
+    line-height: 5px;
+    padding: 3px 4px;
+    cursor: move;
+    vertical-align: middle;
+    margin-top: -.7em;
+    margin-right: .3em;
+    font-size: 12px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    color: #cccccc;
+    text-shadow: 1px 0 1px black;
+  }
+  span.grippy::after {
+    content: '.. .. .. ..';
+  }
