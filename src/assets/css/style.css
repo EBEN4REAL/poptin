@@ -7,6 +7,7 @@
     --popin-star-color: #ca3735;
     --popin-bg-color: #1a1a1a;
     --black-color: #000;
+    --loader-color: #ca3735;
   }
 
 
@@ -196,3 +197,51 @@ body {
 .show-element {
     display: block !important
 }
+
+/* Floating button */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+  }
+  
+  button {
+    padding: 10px 15px;
+    background-color: rgb(121, 121, 183);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    border-radius: 15px;
+  }
+  
+  /* Line Loader styles */
+  .loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 48%;
+    top: 10px;
+  }
+  
+  .loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid var(--loader-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
