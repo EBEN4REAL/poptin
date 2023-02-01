@@ -42,7 +42,7 @@
                 </form>
                 <div class="text-center text-white mt-3" contenteditable="true">
                     <!-- {{popinData.footerText}} -->
-                    Credit card required. No Surprises
+                    No credit card required. No Surprises
                 </div>
             </div>
         </div>
