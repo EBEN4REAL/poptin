@@ -58,7 +58,7 @@
             borderRadius="0.1" 
         />
         <input type="color" v-if="showColorInput" @change="handleColorChange" />
-        <div class="floating-button">
+        <div class="floating-button" v-if="showSaveBtn">
             <button>Save changes</button>
         </div>
     </div>
@@ -76,6 +76,7 @@ export default {
     return {
       showColorInput: false,
       showLoader: false,
+      showSaveBtn: false,
       popinBgOptions: [
         {
           icon: "arrow-up",
@@ -96,11 +97,12 @@ export default {
     this.getPopinContent()
   },
   mounted() {
-    setTimeout(function () {
+    setTimeout(() => {
       let popinBgWrapper = document.querySelector(".popin-bg-wrapper");
       popinBgWrapper.classList.add("show-element");
       const popinElement = document.querySelector(".popin-wrapper");
       popinElement.classList.add("popin-wrapper-slide-in");
+      this.showSaveBtn = true
     }, 1000);
   },
   methods: {
