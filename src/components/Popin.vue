@@ -118,6 +118,7 @@ export default {
       popinForm.classList.add("popin-wrapper-slide-out");
       let popinBgWrapper = document.querySelector(".popin-bg-wrapper");
       popinBgWrapper.classList.remove("show-element");
+      this.showSaveBtn = false
     },
     showContextMenu(event) {
       this.$refs.kiContext.show(event, this.popinBgOptions);
