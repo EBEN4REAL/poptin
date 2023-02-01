@@ -8,8 +8,12 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@kiyoaki_w/vue-context": "^1.0.3",
     "core-js": "^3.8.3",
-    "vue": "^2.6.14"
+    "v-drag": "^3.0.8",
+    "vue": "^2.6.14",
+    "vue-simple-context-menu": "^3.4.2",
+    "vuedraggable": "^2.24.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
