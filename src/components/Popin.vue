@@ -8,7 +8,7 @@
             @click="hideContextMenu()"
             @contextmenu.prevent="showContextMenu($event)" 
             :style="{backgroundColor: popinBgStateData.backgroundColor}">
-            
+
             <div class="popin-inner-container">
                 <div class="popin-stars-wrapper">
                     <div class="popin-stars">
@@ -60,7 +60,9 @@
             iconColor="#41b883" 
             borderRadius="0.1" 
         />
+        
         <input type="color" v-if="showColorInput" @change="handleColorChange" />
+
         <div class="floating-button" v-if="showSaveBtn">
             <button>Save changes</button>
         </div>
