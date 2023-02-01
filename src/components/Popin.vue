@@ -69,6 +69,9 @@
 </template>
 
 <script>
+import {getPoptin} from "../Services/Popin"
+import {config} from "../Config"
+
 export default {
   name: "PopinConponent",
   components: {},
@@ -107,11 +110,10 @@ export default {
   },
   methods: {
     getPopinContent() {
-        fetch('http://localhost:1337/api/poptins')
-            .then((response) => response.json())
-            .then((data) => {
-                this.popinData = data.data[0].attributes
-            });
+        getPoptin(`${config.API_BASE_URL}/poptins`).then((data) => {
+            this.popinData = data[0].attributes
+            this.showLoader = false
+        })
     },
     closePopin() {
       const popinForm = document.querySelector(".popin-wrapper");
