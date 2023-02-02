@@ -92,7 +92,7 @@ function showPopup() {
     popinElement.classList.add("popin-wrapper-slide-in");
 
     document.querySelector(".close-button").addEventListener("click", () => {
-      this.closePopUp();
+      closePopUp();
     });
 
     function closePopUp() {
