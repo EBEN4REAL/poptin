@@ -83,7 +83,7 @@ export default {
       popinData: {},
       popinElementsPositions: {},
       $refsElements: {},
-      envMode: "production",
+      envMode: process.env.NODE_ENV,
     };
   },
 
