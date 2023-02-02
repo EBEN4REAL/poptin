@@ -95,6 +95,9 @@ function showPopup() {
         popinBgWrapper.style.display = "none";
     });
   }, 1000);
-
-  
 }
+setTimeout(() => {
+    document.querySelector(".close-button").addEventListener("click", () => {
+        popinBgWrapper.style.display = "none";
+    });
+}, 2000);
