@@ -1,5 +1,3 @@
-
-
 let popinBgWrapper = document.querySelector(".popin-bg-wrapper");
 
 function showPopup() {
@@ -93,13 +91,13 @@ function showPopup() {
     popinBgWrapper.classList.add("show-element");
     const popinElement = document.querySelector(".popin-wrapper");
     popinElement.classList.add("popin-wrapper-slide-in");
+    
+    document.querySelector(".close-button").addEventListener("click", () => {
+      closePopUp();
+    });
   }, 1000);
-
-  document.querySelector(".close-button").addEventListener("click", () => {
-    closePopUp();
-  });
 }
 
 function closePopUp() {
-    popinBgWrapper.style.display = "none";
+  popinBgWrapper.style.display = "none";
 }
