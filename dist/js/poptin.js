@@ -4,6 +4,7 @@
 
 function showPopup() {
   // Create the pop-up element
+  console.log("EBEN")
   let popup = document.createElement("div");
   popup.classList.add("popup");
   popup.innerHTML = `
