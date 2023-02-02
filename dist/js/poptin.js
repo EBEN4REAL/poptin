@@ -1,12 +1,11 @@
 
 
 function showPopup() {
-  // Create the pop-up element
   let popup = document.createElement("div");
   popup.classList.add("popup");
   popup.innerHTML = `
   <div class="popin-bg-wrapper" ref="popin-bg-wrapper">
-    <div class="close-button">
+    <div class="close-button" onClick="closePopUp()">
         <span class="close-butto">&times;</span>
     </div>
     </div>
@@ -86,10 +85,6 @@ function showPopup() {
     </div>
     `;
 
-  // Append the pop-up element to the body
-  
-  
-
   setTimeout(() => {
     document.body.appendChild(popup);
     let popinBgWrapper = document.querySelector(".popin-bg-wrapper");
@@ -98,4 +93,8 @@ function showPopup() {
     const popinElement = document.querySelector(".popin-wrapper");
     popinElement.classList.add("popin-wrapper-slide-in");
   }, 1000)
+
+  function closePopUp() {
+    alert("POPUP CLOSED!")
+  }
 }
