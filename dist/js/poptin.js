@@ -92,13 +92,8 @@ function showPopup() {
     popinElement.classList.add("popin-wrapper-slide-in");
 
     document.querySelector(".close-button").addEventListener("click", () => {
-      closePopUp();
-    });
-
-    function closePopUp() {
-        alert("CLOSE POPUP");
         popinBgWrapper.style.display = "none";
-    }
+    });
   }, 1000);
 
   
