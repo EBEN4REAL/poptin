@@ -78,6 +78,7 @@
         class="footerText"
         contenteditable="true"
         v-if="popinData?.attributes?.footerText"
+        :style="{top: '53px'}"
         >{{ popinData?.attributes?.footerText }}</span
       >
       <span v-else class="footerText" contenteditable="true">
