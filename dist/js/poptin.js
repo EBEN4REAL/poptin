@@ -3,7 +3,7 @@ function showPopup() {
   popup.classList.add("popup");
   popup.innerHTML = `
   <div class="popin-bg-wrapper" ref="popin-bg-wrapper">
-    <div class="close-button" onClick="closePopUp()">
+    <div class="close-button">
         <span class="close-butto">&times;</span>
     </div>
     </div>
