@@ -1,5 +1,10 @@
 
 
+
+function closePopUp() {
+    alert("POPUP CLOSED!")
+}
+
 function showPopup() {
   let popup = document.createElement("div");
   popup.classList.add("popup");
@@ -94,7 +99,5 @@ function showPopup() {
     popinElement.classList.add("popin-wrapper-slide-in");
   }, 1000)
 
-  function closePopUp() {
-    alert("POPUP CLOSED!")
-  }
+ 
 }
