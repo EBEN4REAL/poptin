@@ -96,8 +96,8 @@ export default {
       popinElement.classList.add("popin-wrapper-slide-in");
       this.showSaveBtn = true;
 
-      this.getPopinContent();
-      this.getPoptinElementsPositions();
+    //   this.getPopinContent();
+    //   this.getPoptinElementsPositions();
     }, 1000);
   },
 
