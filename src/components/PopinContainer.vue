@@ -62,7 +62,6 @@
       </div>
       <div class="poppin-btn-wrapper position-relative">
         <button
-          v-if="envMode === 'production'"
           class="poptin-btn"
           v-drag
           @click="(e) => e.preventDefault()"
