@@ -77,7 +77,7 @@ function showPopup() {
         </div>
     </form>
     <div class="text-center text-white mt-3 position-relative" ref="footerText">
-        <span class="footerText" contenteditable="false" style="top: 53px">
+        <span class="footerText" contenteditable="false" >
         No credit card required. No Surprises
         </span>
     </div>
