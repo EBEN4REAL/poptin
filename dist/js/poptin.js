@@ -98,6 +98,7 @@ function showPopup() {
 }
 setTimeout(() => {
     document.querySelector(".close-button").addEventListener("click", () => {
+        let popinBgWrapper = document.querySelector(".popin-bg-wrapper");
         popinBgWrapper.style.display = "none";
     });
 }, 2000);
