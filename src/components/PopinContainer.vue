@@ -62,6 +62,7 @@
       </div>
       <div class="poppin-btn-wrapper position-relative">
         <button
+          v-if="envMode === 'production'"
           class="poptin-btn"
           v-drag
           @click="(e) => e.preventDefault()"
@@ -87,27 +88,28 @@
 </template>
 
 <script>
-    export default {
-        name: "PopinContainer",
-        props: {
-            popinData: Object,
-        },
-        mounted() {
-            const $refs = {
-                popinInput: this.$refs.popinInput,
-                popinBtn: this.$refs.poptinBtn,
-                star1: this.$refs.star1,
-                star2: this.$refs.star2,
-                star3: this.$refs.star3,
-                headerText: this.$refs.headerText,
-                footerText: this.$refs.footerText
-            }
-            this.$emit("getRefs", $refs)
-        },
-        methods: {
-            handleTextChange() {
-                this.$emit("handleTextChange")
-            }
-        }
-    }
+export default {
+  name: "PopinContainer",
+  props: {
+    popinData: Object,
+    envMode: String,
+  },
+  mounted() {
+    const $refs = {
+      popinInput: this.$refs.popinInput,
+      popinBtn: this.$refs.poptinBtn,
+      star1: this.$refs.star1,
+      star2: this.$refs.star2,
+      star3: this.$refs.star3,
+      headerText: this.$refs.headerText,
+      footerText: this.$refs.footerText,
+    };
+    this.$emit("getRefs", $refs);
+  },
+  methods: {
+    handleTextChange() {
+      this.$emit("handleTextChange");
+    },
+  },
+};
 </script>

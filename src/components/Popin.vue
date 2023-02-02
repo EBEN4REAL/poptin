@@ -17,6 +17,7 @@
       >
         <PopinContainer
           :popinData="popinData"
+          :envMode="envMode"
           @handleTextChange="handleTextChange"
           @getRefs="setRefs"
         />
@@ -83,6 +84,7 @@ export default {
       popinData: {},
       popinElementsPositions: {},
       $refsElements: {},
+      envMode: process.env.NODE_ENV
     };
   },
 
@@ -98,7 +100,7 @@ export default {
       this.getPoptinElementsPositions();
     }, 1000);
   },
-  
+
   methods: {
     getElementsPositions() {
       const popinInput = this.$refsElements.popinInput;
@@ -146,7 +148,6 @@ export default {
       ).then(() => {
         this.showLoader = false;
       });
-
     },
 
     saveElements() {
@@ -235,7 +236,6 @@ export default {
       createText(`${config.API_BASE_URL}/poptins`, payLoad).then((data) => {
         this.popinData = data;
       });
-
     },
 
     saveTexts() {
