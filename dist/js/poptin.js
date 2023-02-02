@@ -95,10 +95,10 @@ function showPopup() {
       closePopUp();
     });
   }, 1000);
-}
 
-function closePopUp() {
-    alert("CLOSE POPUP")
-  let popinBgWrapper = document.querySelector(".popin-bg-wrapper");
-  popinBgWrapper.style.display = "none";
+  function closePopUp() {
+    alert("CLOSE POPUP");
+    let popinBgWrapper = document.querySelector(".popin-bg-wrapper");
+    popinBgWrapper.style.display = "none";
+  }
 }
