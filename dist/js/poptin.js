@@ -1,6 +1,6 @@
-function closePopUp() {
-  alert("POPUP CLOSED!");
-}
+
+
+let popinBgWrapper = document.querySelector(".popin-bg-wrapper");
 
 function showPopup() {
   let popup = document.createElement("div");
@@ -89,7 +89,6 @@ function showPopup() {
 
   setTimeout(() => {
     document.body.appendChild(popup);
-    let popinBgWrapper = document.querySelector(".popin-bg-wrapper");
     popinBgWrapper.style.display = "block";
     popinBgWrapper.classList.add("show-element");
     const popinElement = document.querySelector(".popin-wrapper");
@@ -99,4 +98,8 @@ function showPopup() {
   document.querySelector(".close-button").addEventListener("click", () => {
     closePopUp();
   });
+}
+
+function closePopUp() {
+    popinBgWrapper.style.display = "none";
 }
