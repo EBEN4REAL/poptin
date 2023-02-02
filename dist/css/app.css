@@ -6,8 +6,9 @@
     --popin-star-color: #ca3735;
     --popin-bg-color: #1a1a1a;
     --black-color: #000;
-    --loader-color: #ca3735
+    --loader-color: #ca3735;
 }
+
 
 * {
     padding: 0;
@@ -103,11 +104,11 @@ body {
     outline: none;
     position: absolute;
     top: -4px;
-    left: 0
+    left: 0px;
 }
 
 .position-relative {
-    position: relative
+    position: relative;
 }
 
 .popin-form-wrapper .popin-input::-moz-placeholder {
@@ -129,7 +130,8 @@ body {
 }
 
 .poppin-btn-wrapper {
-    margin-top: 30px
+    margin-top: 30px;
+
 }
 
 .poptin-btn {
@@ -144,15 +146,16 @@ body {
     width: 100%;
     border-radius: 15px;
     font-weight: 700;
+
     position: absolute;
     top: 45px;
-    left: 0
+    left: 0px;
 }
 
 .footerText {
     position: absolute;
-    top: 53px;
-    left: 21.5%
+    top: 130px;
+    left: 21.5%;
 }
 
 .popin-stars-wrapper .popin-stars {
@@ -166,19 +169,19 @@ body {
 .popin-stars-wrapper .popin-stars .star1 {
     position: absolute;
     left: -3px;
-    top: 10px
+    top: 10px;
 }
 
 .popin-stars-wrapper .popin-stars .star2 {
     position: absolute;
     left: 51px;
-    top: -11px
+    top: -11px;
 }
 
 .popin-stars-wrapper .popin-stars .star3 {
     position: absolute;
     left: 120px;
-    top: 10px
+    top: 10px;
 }
 
 .popin-stars-wrapper {
@@ -229,30 +232,32 @@ body {
     display: block !important
 }
 
+/* Floating button */
 .floating-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 999
+    z-index: 999;
 }
 
 button {
     padding: 10px 15px;
-    background-color: #7979b7;
-    color: #fff;
+    background-color: rgb(121, 121, 183);
+    color: white;
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    border-radius: 15px
+    border-radius: 15px;
 }
 
+/* Line Loader styles */
 .loader-container {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     left: 48%;
-    top: 10px
+    top: 10px;
 }
 
 .loader {
@@ -261,27 +266,28 @@ button {
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    animation: spin 2s linear infinite
+    animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
     0% {
-        transform: rotate(0deg)
+        transform: rotate(0deg);
     }
 
-    to {
-        transform: rotate(1turn)
+    100% {
+        transform: rotate(360deg);
     }
 }
 
+/* Draggable */
 .draggableElement {
-    border: 1px dashed #aaa;
+    border: dashed 1px #aaaaaa;
     padding: 6px 12px;
-    font-size: 1.2em
+    font-size: 1.2em;
 }
 
 span.grippy {
-    content: "....";
+    content: '....';
     width: 10px;
     height: 100px;
     display: inline-block;
@@ -295,15 +301,17 @@ span.grippy {
     font-size: 12px;
     font-family: sans-serif;
     letter-spacing: 2px;
-    color: #ccc;
-    text-shadow: 1px 0 1px #000
+    color: #cccccc;
+    text-shadow: 1px 0 1px black;
 }
 
-span.grippy:after {
-    content: ".. .. .. .."
+span.grippy::after {
+    content: '.. .. .. ..';
 }
 
-@media screen and (max-Width:575px) {
+
+/* Responsiveness */
+@media screen and (max-Width: 575px) {
     .popin-wrapper .popin-container .popin-inner-container {
         width: 335px;
         height: 335px
@@ -316,56 +324,60 @@ span.grippy:after {
 
     .popin-stars-wrapper .popin-stars .star1 {
         left: -31px;
-        top: -8px
+        top: -8px;
     }
 
     .popin-stars-wrapper .popin-stars .star2 {
         left: 28px;
-        top: -28px
+        top: -28px;
     }
 
     .popin-stars-wrapper .popin-stars .star3 {
         left: 99px;
-        top: -8px
+        top: -8px;
     }
 
     .headerText {
-        font-size: 18px
+        font-size: 18px;
     }
 
     .popin-para-container .popin-para {
         font-weight: 600;
         font-size: 18px;
-        padding: 0 42px
+        padding: 0 42px;
     }
 
     .popin-para-container {
-        margin-top: 70px
+        margin-top: 70px;
+    }
+
+    .poptin-btn {
+        padding: 12px 22px;
     }
 
     .floating-button {
         position: fixed;
         bottom: 30px;
         right: 30px;
-        z-index: 999
+        z-index: 999;
     }
 
     .popin-form-wrapper .popin-input {
         font-size: 20px;
         padding: 3px 3px;
-        top: -17px
+        top: -17px;
     }
 
     .poptin-btn {
         padding: 12px 22px;
         font-size: 16px;
-        top: 7px
+        top: 7px;
     }
 
     .footerText {
         top: -7px;
         left: 4.5px;
         font-size: 17px;
-        padding: 10px
+        padding: 10px;
     }
 }

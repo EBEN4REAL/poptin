@@ -61,12 +61,13 @@
         />
       </div>
       <div class="poppin-btn-wrapper position-relative">
-        <button
+         <button
           class="poptin-btn"
           v-drag
           @click="(e) => e.preventDefault()"
           id="popinBtn"
           ref="poptinBtn"
+          
         >
           SIGNUP NOW
         </button>
@@ -112,3 +113,8 @@ export default {
   },
 };
 </script>
+
+
+
+
+
