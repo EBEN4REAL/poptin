@@ -155,6 +155,7 @@ body {
 .footerText {
     position: absolute;
     top: 130px;
+    /* top: 53px; */
     left: 21.5%;
 }
 
