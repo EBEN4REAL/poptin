@@ -15,89 +15,11 @@
         @contextmenu.prevent="showContextMenu($event)"
         :style="{ backgroundColor: popinBgStateData.backgroundColor }"
       >
-        <div class="popin-inner-container">
-          <div class="popin-stars-wrapper">
-            <div class="popin-stars position-relative">
-              <div>
-                <i
-                  class="fa fa-star popin-star popin-star--small star1"
-                  aria-hidden="true"
-                  v-drag
-                  ref="star1"
-                ></i>
-              </div>
-              <div class="popin-center-star star-2">
-                <i
-                  class="fa fa-star popin-star popin-star--big star2"
-                  v-drag
-                  aria-hidden="true"
-                  ref="star2"
-                ></i>
-              </div>
-              <div class="star-3">
-                <i
-                  class="fa fa-star popin-star popin-star--small star3"
-                  v-drag
-                  aria-hidden="true"
-                  ref="star3"
-                ></i>
-              </div>
-            </div>
-          </div>
-          <div class="popin-para-container">
-            <div
-              class="popin-para text-white text-center draggableElement"
-              v-on:dblclick="handleTextChange"
-              contenteditable="true"
-            >
-              <span ref="headerText" v-if="popinData?.attributes?.headerText">
-                {{ popinData?.attributes?.headerText }}
-              </span>
-              <span v-else ref="headerText">
-                <span class="grippy"></span>
-                All the text and elements in this popup should be editable and
-                dragable
-              </span>
-            </div>
-          </div>
-          <form class="popin-form-wrapper">
-            <div class="poppin-input-wrapper position-relative">
-              <input
-                class="popin-input draggableElement"
-                type="text"
-                v-drag
-                placeholder="E-mail"
-                id="popin-input"
-                ref="popinInput"
-              />
-            </div>
-            <div class="poppin-btn-wrapper position-relative">
-              <button
-                class="poptin-btn "
-                v-drag
-                @click="(e) => e.preventDefault()"
-                id="popinBtn"
-                ref="poptinBtn"
-              >
-                SIGNUP NOW
-              </button>
-            </div>
-          </form>
-          <div
-            class="text-center text-white mt-3 position-relative"
-            ref="footerText"
-          >
-            <span
-              class="footerText"
-              contenteditable="true"
-              v-if="popinData?.attributes?.footerText"
-              >{{ popinData?.attributes?.footerText }}</span
-            >
-            <span v-else class="footerText" contenteditable="true">
-              No credit card required. No Surprises
-            </span>
-          </div>
-        </div>
+        <PopinContainer
+          :popinData="popinData"
+          @handleTextChange="handleTextChange"
+          @getRefs="setRefs"
+        />
       </div>
 
       <ki-context
@@ -133,10 +55,13 @@ import {
   createText,
 } from "../Services/Popin";
 import { config } from "../Config";
+import PopinContainer from "../components/PopinContainer.vue";
 
 export default {
   name: "PopinConponent",
-  components: {},
+  components: {
+    PopinContainer,
+  },
   data() {
     return {
       showColorInput: false,
@@ -155,10 +80,12 @@ export default {
       popinBgStateData: {
         backgroundColor: "#e85f5b",
       },
-      popinData: [],
+      popinData: {},
       popinElementsPositions: {},
+      $refsElements: {},
     };
   },
+
   mounted() {
     setTimeout(() => {
       let popinBgWrapper = document.querySelector(".popin-bg-wrapper");
@@ -171,13 +98,14 @@ export default {
       this.getPoptinElementsPositions();
     }, 1000);
   },
+  
   methods: {
     getElementsPositions() {
-      const popinInput = this.$refs.popinInput;
-      const popinBtnElement = this.$refs.poptinBtn;
-      const popinStar_1 = this.$refs.star1;
-      const popinStar_2 = this.$refs.star2;
-      const popinStar_3 = this.$refs.star3;
+      const popinInput = this.$refsElements.popinInput;
+      const popinBtnElement = this.$refsElements.popinBtn;
+      const popinStar_1 = this.$refsElements.star1;
+      const popinStar_2 = this.$refsElements.star2;
+      const popinStar_3 = this.$refsElements.star3;
 
       const payLoad = {
         data: {
@@ -208,17 +136,22 @@ export default {
 
       return payLoad;
     },
+
     createElements() {
       const payload = this.getElementsPositions();
+
       createElementsPositions(
         `${config.API_BASE_URL}/elements-positions`,
         payload
       ).then(() => {
         this.showLoader = false;
       });
+
     },
+
     saveElements() {
       const payload = this.getElementsPositions();
+
       saveElementsPositions(
         `${config.API_BASE_URL}/elements-positions/${this.popinElementsPositions.id}`,
         payload
@@ -226,6 +159,7 @@ export default {
         this.showLoader = false;
       });
     },
+
     getPoptinElementsPositions() {
       getElementsPositions(`${config.API_BASE_URL}/elements-positions`).then(
         (data) => {
@@ -239,11 +173,11 @@ export default {
               this.popinElementsPositions?.attributes?.poptinStars;
             this.popinElementsPositions?.attributes;
 
-            let popinInputElement = this.$refs.popinInput;
-            let popinBtnElement = this.$refs.poptinBtn;
-            let popinStar_1 = this.$refs.star1;
-            let popinStar_2 = this.$refs.star2;
-            let popinStar_3 = this.$refs.star3;
+            let popinInputElement = this.$refsElements.popinInput;
+            let popinBtnElement = this.$refsElements.popinBtn;
+            let popinStar_1 = this.$refsElements.star1;
+            let popinStar_2 = this.$refsElements.star2;
+            let popinStar_3 = this.$refsElements.star3;
 
             if (poptinInput?.left && poptinInput?.top) {
               popinInputElement.style.left = poptinInput.left;
@@ -275,36 +209,44 @@ export default {
         }
       );
     },
+
     savechanges(e) {
       e.preventDefault();
       this.showLoader = true;
+
       if (this.popinElementsPositions?.id) {
         this.saveElements();
       } else {
         this.createElements();
       }
+
       this.saveTexts();
     },
+
     createTexts() {
       const payLoad = {
         data: {
-          headerText: this.$refs.headerText.textContent,
-          footerText: this.$refs.footerText.textContent,
+          headerText: this.$refsElements.headerText.textContent,
+          footerText: this.$refsElements.footerText.textContent,
           popupBg: this.popinBgStateData.backgroundColor,
         },
       };
+
       createText(`${config.API_BASE_URL}/poptins`, payLoad).then((data) => {
         this.popinData = data;
       });
+
     },
+
     saveTexts() {
       const payLoad = {
         data: {
-          headerText: this.$refs.headerText.textContent,
-          footerText: this.$refs.footerText.textContent,
+          headerText: this.$refsElements.headerText.textContent,
+          footerText: this.$refsElements.footerText.textContent,
           popupBg: this.popinBgStateData.backgroundColor,
         },
       };
+
       saveTextChanges(
         `${config.API_BASE_URL}/poptins/${this.popinData.id}`,
         payLoad
@@ -312,6 +254,7 @@ export default {
         this.popinData = data;
       });
     },
+
     getPopinContent() {
       getPoptin(`${config.API_BASE_URL}/poptins`).then((data) => {
         if (data.length) {
@@ -323,6 +266,7 @@ export default {
         this.showLoader = false;
       });
     },
+
     closePopin() {
       const popinForm = document.querySelector(".popin-wrapper");
       popinForm.classList.add("popin-wrapper-slide-out");
@@ -343,6 +287,9 @@ export default {
     handleTextChange() {
       const popintParaText = document.querySelector(".popin-para");
       popintParaText.contentEditable = true;
+    },
+    setRefs($refsElements) {
+      this.$refsElements = $refsElements;
     },
   },
 };

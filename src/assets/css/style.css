@@ -281,11 +281,12 @@ button {
 
 /* Draggable */
 .draggableElement {
-    border:dashed 1px #aaaaaa;
+    border: dashed 1px #aaaaaa;
     padding: 6px 12px;
     font-size: 1.2em;
-  }
-  span.grippy {
+}
+
+span.grippy {
     content: '....';
     width: 10px;
     height: 100px;
@@ -302,7 +303,81 @@ button {
     letter-spacing: 2px;
     color: #cccccc;
     text-shadow: 1px 0 1px black;
-  }
-  span.grippy::after {
+}
+
+span.grippy::after {
     content: '.. .. .. ..';
-  }
+}
+
+
+/* Responsiveness */
+@media screen and (max-Width: 575px) {
+    .popin-wrapper .popin-container .popin-inner-container {
+        width: 335px;
+        height: 335px
+    }
+
+    .popin-wrapper .popin-container {
+        width: 350px;
+        height: 350px
+    }
+
+    .popin-stars-wrapper .popin-stars .star1 {
+        left: -31px;
+        top: -8px;
+    }
+
+    .popin-stars-wrapper .popin-stars .star2 {
+        left: 28px;
+        top: -28px;
+    }
+
+    .popin-stars-wrapper .popin-stars .star3 {
+        left: 99px;
+        top: -8px;
+    }
+
+    .headerText {
+        font-size: 18px;
+    }
+
+    .popin-para-container .popin-para {
+        font-weight: 600;
+        font-size: 18px;
+        padding: 0 42px;
+    }
+
+    .popin-para-container {
+        margin-top: 70px;
+    }
+
+    .poptin-btn {
+        padding: 12px 22px;
+    }
+
+    .floating-button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 999;
+    }
+
+    .popin-form-wrapper .popin-input {
+        font-size: 20px;
+        padding: 3px 3px;
+        top: -17px;
+    }
+
+    .poptin-btn {
+        padding: 12px 22px;
+        font-size: 16px;
+        top: 7px;
+    }
+
+    .footerText {
+        top: -7px;
+        left: 4.5px;
+        font-size: 17px;
+        padding: 10px;
+    }
+}
