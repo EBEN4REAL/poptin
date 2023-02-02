@@ -98,6 +98,7 @@ function showPopup() {
 }
 
 function closePopUp() {
+    alert("CLOSE POPUP")
   let popinBgWrapper = document.querySelector(".popin-bg-wrapper");
   popinBgWrapper.style.display = "none";
 }
