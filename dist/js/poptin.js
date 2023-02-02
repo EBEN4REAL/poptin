@@ -1,13 +1,6 @@
-
-
-
 function closePopUp() {
-    alert("POPUP CLOSED!")
+  alert("POPUP CLOSED!");
 }
-
-document.querySelector(".close-button").addEventListener('click', () => {
-    closePopUp()
-})
 
 function showPopup() {
   let popup = document.createElement("div");
@@ -101,7 +94,9 @@ function showPopup() {
     popinBgWrapper.classList.add("show-element");
     const popinElement = document.querySelector(".popin-wrapper");
     popinElement.classList.add("popin-wrapper-slide-in");
-  }, 1000)
+  }, 1000);
 
- 
+  document.querySelector(".close-button").addEventListener("click", () => {
+    closePopUp();
+  });
 }
