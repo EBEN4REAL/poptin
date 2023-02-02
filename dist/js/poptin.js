@@ -87,14 +87,15 @@ function showPopup() {
     `;
 
   // Append the pop-up element to the body
-  let popinBgWrapper = document.querySelector(".popin-bg-wrapper");
-  popinBgWrapper.style.display = "block";
-  popinBgWrapper.classList.add("show-element");
-  const popinElement = document.querySelector(".popin-wrapper");
-  popinElement.classList.add("popin-wrapper-slide-in");
+  
   
 
   setTimeout(() => {
     document.body.appendChild(popup);
+    let popinBgWrapper = document.querySelector(".popin-bg-wrapper");
+    popinBgWrapper.style.display = "block";
+    popinBgWrapper.classList.add("show-element");
+    const popinElement = document.querySelector(".popin-wrapper");
+    popinElement.classList.add("popin-wrapper-slide-in");
   }, 1000)
 }
