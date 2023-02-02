@@ -381,3 +381,24 @@ span.grippy::after {
         padding: 10px;
     }
 }
+
+/* close button */
+.close-button {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    color: var(--black-color);
+    text-align: center;
+    line-height: 30px;
+    font-size: 50px;
+    text-align: right;
+  }
+  
+  .close-button:hover {
+    background-color: #fff;
+    color: #333;
+  }

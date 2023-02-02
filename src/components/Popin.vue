@@ -1,11 +1,9 @@
 <template>
   <div>
     <div class="popin-bg-wrapper" ref="popin-bg-wrapper">
-      <i
-        class="fa fa-times close-btn"
-        @click="closePopin"
-        aria-hidden="true"
-      ></i>
+      <div class="close-button"  @click="closePopin">
+        <span class="close-butto">&times;</span>
+      </div>
     </div>
     <div class="popin-wrapper" ref="popin-wrapper">
       <div
@@ -84,7 +82,7 @@ export default {
       popinData: {},
       popinElementsPositions: {},
       $refsElements: {},
-      envMode: 'production'
+      envMode: "production",
     };
   },
 
