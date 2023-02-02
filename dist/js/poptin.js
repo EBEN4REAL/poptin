@@ -5,6 +5,10 @@ function closePopUp() {
     alert("POPUP CLOSED!")
 }
 
+document.querySelector(".close-button").addEventListener('click', () => {
+    closePopUp()
+})
+
 function showPopup() {
   let popup = document.createElement("div");
   popup.classList.add("popup");
