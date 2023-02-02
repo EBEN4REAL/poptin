@@ -92,13 +92,14 @@ function showPopup() {
     popinElement.classList.add("popin-wrapper-slide-in");
 
     document.querySelector(".close-button").addEventListener("click", () => {
-      closePopUp();
+      this.closePopUp();
     });
+
+    function closePopUp() {
+        alert("CLOSE POPUP");
+        popinBgWrapper.style.display = "none";
+    }
   }, 1000);
 
-  function closePopUp() {
-    alert("CLOSE POPUP");
-    let popinBgWrapper = document.querySelector(".popin-bg-wrapper");
-    popinBgWrapper.style.display = "none";
-  }
+  
 }
