@@ -1,10 +1,11 @@
 <template>
   <div>
     <div class="popin-bg-wrapper" ref="popin-bg-wrapper">
-      <div class="close-button"  @click="closePopin">
+      <div class="close-button" @click="closePopin">
         <span class="close-butto">&times;</span>
       </div>
     </div>
+
     <div class="popin-wrapper" ref="popin-wrapper">
       <div
         class="popin-container"
